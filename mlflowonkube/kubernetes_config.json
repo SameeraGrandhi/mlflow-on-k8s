@@ -1,0 +1,5 @@
+{
+    "kube-context": "minikube",
+    "kube-job-template-path": "mlflowKube/kubernetes_job_template.yaml",
+    "repository-uri": "srinivasanpramati2020/mlflow-on-kubernetes-docker"
+}

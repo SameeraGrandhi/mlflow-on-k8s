@@ -1,0 +1,10 @@
+name: mlflow-on-kubernetes
+docker_env:
+   image: srinivasanpramati2020/mlflow-on-kubernetes-docker
+   
+entry_points:
+  main:
+    parameters:
+      alpha: float
+      l1_ratio: {type: float, default: 0.1}
+    command: "python train.py --alpha {alpha} --l1-ratio {l1_ratio}"

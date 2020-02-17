@@ -1,0 +1,3 @@
+resources:
+- nexus-pv.yaml
+- nexus-deployment.yaml
