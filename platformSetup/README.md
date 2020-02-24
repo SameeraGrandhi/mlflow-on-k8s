@@ -1,4 +1,4 @@
-# Platform Setup on MiniKube
+# Platform Setup
 This Project describes all the installation process for To run Mlflow project on  minikube/Kubernetes Cluster starting from scratch. This will covers all aspect of its installation including all various softwares needed, and how to deploy the required services on kubernetes cluster.
 
 
