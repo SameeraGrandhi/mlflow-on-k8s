@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: mlflowserver
+   namespace: mlflowonkube
+spec:
+   type: NodePort
+   ports:
+   -  port: 5000
+      protocol: TCP
+      nodePort: 30035
+      name: http
+   selector:
+      app: mlflowui
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mlflowserver
+   namespace: mlflowonkube
+spec:
+   selector:
+      matchLabels:
+         app: mlflowui
+   strategy:
+      type: Recreate
+   template:
+      metadata:
+         labels:
+            app: mlflowui
+      spec:
+         containers:
+         -  image: srinivasanpramati2020/mlflowui
+            name: mlflowserver
+            ports:
+            -  containerPort: 5000
+               name: mlflowui
+            volumeMounts:
+            -  name: mlflow-persistent-storage
+               mountPath: /mnt/mlflow
+         imagePullSecrets:
+         -  name: regcred
+         volumes:
+         -  name: mlflow-persistent-storage
+            persistentVolumeClaim:
+               claimName: mlflow-pv-claim
