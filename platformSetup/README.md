@@ -8,6 +8,18 @@ Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis
 
 Check the [wiki](https://gitlab.pramati.com/devops-practise/kubernetes/wikis/Getting-Started) to Install Kubernetes Cluster
 
+### 2. Clone the repo
+Clone this repository. In a terminal, run:
+
+```
+$ git clone 
+```
+### 3. Create namespace in kubernetes
+Run below command to create namespace in kubernetes
+```
+$ kubectl create ns <your namespace>
+```
+
 ### 4. Create the Database service on kubernetes
 The backend consists of a MySQL database & it has a Deployment and a Service. The deployment manages the pods started for mysql service. The Service creates a stable DNS entry for mysql service  so they can reference their dependencies by name.
 ##### Step 1: Update mysql password in manifest file
