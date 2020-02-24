@@ -12,7 +12,7 @@ Check the [wiki](https://gitlab.pramati.com/devops-practise/kubernetes/wikis/Get
 Clone this repository. In a terminal, run:
 
 ```
-$ git clone 
+$ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
 ```
 ### 3. Create namespace in kubernetes
 Run below command to create namespace in kubernetes
