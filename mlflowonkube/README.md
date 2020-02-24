@@ -1,4 +1,3 @@
-
 ## Run an MLflow Project on Kubernetes
 In this code we demonstrate how a simple Mlflow Project can be deployed & Run on top of **Kubernetes**. This Simple mlflow Project task here is to predict the quality of red wine on a scale of 0–10 given a set of features as inputs using Linear Regression.
 
@@ -120,4 +119,9 @@ mlflow run <project_dir> --backend kubernetes --backend-config <project_dir>/kub
 ```
 
  ### How it works
- When you run an MLflow Project on Kubernetes, MLflow constructs a new Docker image containing the Project’s contents; this image inherits from the Project’s Docker environment. MLflow then pushes the new Project image to your specified Docker registry and starts a Kubernetes Job on your specified Kubernetes cluster. This Kubernetes Job downloads the Project image and starts a corresponding Docker container. Finally, the container invokes your Project’s entry point, logging parameters, tags, metrics, and artifacts to your MLflow tracking server.
+ When you run an MLflow Project on Kubernetes it will execute below steps
+ 1. Ml Flow trying to Build new Docker image
+ 2. Ml FLow push new Docker Image to Docker Repository
+ 3. Starts a Kubernetes Job on your Kubernetes Cluster
+ 4. Kubernetes job download the Docker image and starts a corresponding docker container inside of Pod 
+ 5. Docker Container invoke your project entry point to logging params,metrics and artifacts
