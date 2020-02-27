@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
    name: flaskapi-service
+   namespace: mlflowonkube
 spec:
    selector:
       app: flaskapi
@@ -16,6 +17,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: flaskapi-deployment
+   namespace: mlflowonkube
    labels:
       app: flaskapi
 spec:
@@ -31,6 +33,9 @@ spec:
          containers:
          -  name: flaskapi
             image: srinivasanpramati2020/mlflow-flask
+            env:
+            -  name: MODEL_PATH
+               value: /mnt/mlflow/0/fe25e92156fa4b10b6b3a165a31ce676/artifacts/model
             ports:
             -  containerPort: 9791
             volumeMounts:
