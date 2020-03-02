@@ -112,7 +112,7 @@ kustomize build kubernetes/overlays/minikube | kubectl apply -f -
 In Microk8s
 ```bash
 cd <flask service manifest folder>
-kustomize build kubernetes/overlays/microk8s | kubectl apply -f -
+kustomize build kubernetes/overlays/microk8s | microk8s.kubectl apply -f -
 ```
 
 command to verify the pod running status
