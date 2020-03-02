@@ -1,0 +1,6 @@
+resources:
+- mlflow-server-pvc.yaml
+- ../../base
+patchesStrategicMerge:
+- patch.yaml
+namePrefix: microk8s-

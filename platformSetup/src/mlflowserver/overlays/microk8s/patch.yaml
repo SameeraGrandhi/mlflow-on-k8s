@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mlflowserver
+   namespace: mlflowonkube
+spec:
+   template:
+      spec:
+         containers:
+         -  name: mlflowserver
+            image: localhost:32000/mlflow-server:registry

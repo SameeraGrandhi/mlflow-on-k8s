@@ -1,0 +1,4 @@
+resources:
+- mysql-pvc.yaml
+- ../../base
+namePrefix: microk8s-

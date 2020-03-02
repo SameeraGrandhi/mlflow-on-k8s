@@ -1,3 +1,0 @@
-resources:
-- mlflow-server-pv.yaml
-- mlflowserver-deployment.yaml

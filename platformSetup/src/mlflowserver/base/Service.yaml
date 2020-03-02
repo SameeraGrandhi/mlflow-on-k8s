@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: mlflowserver
+   namespace: mlflowonkube
+spec:
+   type: NodePort
+   ports:
+   -  port: 5002
+      protocol: TCP
+      nodePort: 30035
+      name: http
+   selector:
+      app: mlflowserver

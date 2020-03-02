@@ -1,0 +1,4 @@
+resources:
+- nexus-pvc.yaml
+- ../../base
+namePrefix: microk8s-

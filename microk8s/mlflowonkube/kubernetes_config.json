@@ -1,5 +1,0 @@
-{
-    "kube-context": "microk8s",
-    "kube-job-template-path": "mlflowonkube/kubernetes_job_template.yaml",
-    "repository-uri": "localhost:32000/mlflow-on-kubernetes-docker:registry"
-}

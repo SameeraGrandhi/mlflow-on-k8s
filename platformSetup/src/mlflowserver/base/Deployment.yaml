@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: mlflowserver
+   namespace: mlflowonkube
+spec:
+   selector:
+      matchLabels:
+         app: mlflowserver
+   strategy:
+      type: Recreate
+   template:
+      metadata:
+         labels:
+            app: mlflowserver
+      spec:
+         containers:
+         -  name: mlflowserver
+            image: srinivasanpramati2020/mlflowui
+            ports:
+            -  containerPort: 5002
+               name: mlflowserver
+            volumeMounts:
+            -  name: mlflow-persistent-storage
+               mountPath: /mnt/mlflow
+         volumes:
+         -  name: mlflow-persistent-storage
+            persistentVolumeClaim:
+               claimName: mlflow-pv-claim

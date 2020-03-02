@@ -1,3 +1,2 @@
 resources:
-- flask-secrets.yml
 - flask-deployment.yaml

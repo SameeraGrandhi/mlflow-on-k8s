@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: nexus-deployment
+   namespace: mlflowonkube
+spec:
+   selector:
+      matchLabels:
+         app: nexus
+   strategy:
+      type: Recreate
+   template:
+      metadata:
+         labels:
+            app: nexus
+      spec:
+         containers:
+         -  image: sonatype/nexus3
+            imagePullPolicy: Always
+            name: nexus
+            ports:
+            -  containerPort: 8081
+            -  containerPort: 5000
+            volumeMounts:
+            -  mountPath: /sonatype-work
+               name: nexus-data-volume
+         volumes:
+         -  name: nexus-data-volume
+            persistentVolumeClaim:
+               claimName: nexus-local-pv-claim

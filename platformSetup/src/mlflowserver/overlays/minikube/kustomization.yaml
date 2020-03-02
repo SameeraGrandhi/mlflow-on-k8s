@@ -1,0 +1,4 @@
+resources:
+- mlflow-server-pv.yaml
+- ../../base
+namePrefix: minikube-
