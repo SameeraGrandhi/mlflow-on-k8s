@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: flaskapi-service
+   namespace: mlflowonkube
+spec:
+   selector:
+      app: flaskapi
+   type: NodePort
+   ports:
+   -  protocol: TCP
+      port: 9791
+      targetPort: 9791
+      nodePort: 30091
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: flaskapi-deployment
+   namespace: mlflowonkube
+   labels:
+      app: flaskapi
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: flaskapi
+   template:
+      metadata:
+         labels:
+            app: flaskapi
+      spec:
+         containers:
+         -  name: flaskapi
+            image: localhost:32000/mlflow-flask:registry
+            env:
+            -  name: MODEL_PATH
+               value: /mnt/mlflow/0/54d872e558df441ea066bff4bf6e0042/artifacts/model
+            ports:
+            -  containerPort: 9791
+            volumeMounts:
+            -  name: mlflow-persistent-storage
+               mountPath: /mnt/mlflow
+         imagePullSecrets:
+         -  name: regcred
+         volumes:
+         -  name: mlflow-persistent-storage
+            persistentVolumeClaim:
+               claimName: mlflow-pv-claim
