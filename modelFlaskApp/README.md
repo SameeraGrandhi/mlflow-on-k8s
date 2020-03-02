@@ -86,12 +86,35 @@ spec:
             persistentVolumeClaim:
                claimName: mlflow-pv-claim
 ```
+In Microk8s update docker image name in ***kubernetes/overlays/microk8s/patch.yaml***
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: flaskapi-deployment
+   namespace: <your namespace>
+spec:
+   template:
+      spec:
+         containers:
+         -  name: flaskapi
+            image: <docker image name>
+```
 #####  Step 3:  Start ml model flask server Service in a container
 Run a below command to Start the ml model flask server in a kubernetes cluster
+
+In MiniKube
 ```bash
 cd <flask service manifest folder>
-kubectl apply -k ./
+kustomize build kubernetes/overlays/minikube | kubectl apply -f -
 ```
+
+In Microk8s
+```bash
+cd <flask service manifest folder>
+kustomize build kubernetes/overlays/microk8s | kubectl apply -f -
+```
+
 command to verify the pod running status
 ```bash
 kubectl get pods -n <your namespace>
