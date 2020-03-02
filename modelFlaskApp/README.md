@@ -88,9 +88,11 @@ spec:
 ```
 #####  Step 3:  Start ml model flask server Service in a container
 Run a below command to Start the ml model flask server in a kubernetes cluster
+
+In MiniKube
 ```bash
 cd <flask service manifest folder>
-kubectl apply -k ./
+kustomize build kubernetes/overlays/minikube | kubectl apply -f -
 ```
 command to verify the pod running status
 ```bash
