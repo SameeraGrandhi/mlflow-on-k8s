@@ -33,7 +33,6 @@ secretGenerator:
   literals:
   - password=<your password>
 resources:
-- mysql-pv.yaml
 - mysql-deployment.yaml
 - client-pod.yaml
 ```
@@ -141,10 +140,16 @@ spec:
           claimName: mysql-pv-claim
 ```
 #####  Step 3:  Start Mysql Service in a container
-Run a below command to Start the mysql service in a kubernetes cluster
+Run a below command to Start the mysql service in a Mini-Kube cluster
 ```bash
 cd <mysql manifest folder>
-kubectl apply -k ./
+kustomize build mysql/overlays/minikube | microk8s.kubectl apply -f -
+```
+
+Run a below command to Start the mysql service in a MicroK8s cluster
+```bash
+cd <mysql manifest folder>
+kustomize build mysql/overlays/microk8s | microk8s.kubectl apply -f -
 ```
 command to verify the pod running status
 ```bash
@@ -155,9 +160,15 @@ Run below command to get minikube ip address
 ```bash
 minikube ip
 ```
+Run below command to get microk8s ip address
+```bash
+#run this command in master node
+ifconfig
+```
+
 login to mysql server to create database and user
 ```bash
-mysql -h <minikube ip> --port=30036 -u root -p
+mysql -h <ip> --port=30036 -u root -p
 > enter <your password>
 ```
 Sql to Create database & User
@@ -322,10 +333,13 @@ spec:
                claimName: mlflow-pv-claim
 ```
 #####  Step 5:  Start Mlflow server Service in a container
-Run a below command to Start the mlflow service service in a kubernetes cluster
+Run a below command to Start the mlflow service service in a MiniKube cluster
 ```bash
-cd <mlflow servce manifest folder>
-kubectl apply -k ./
+kustomize build mlflowserver/overlays/minikube | microk8s.kubectl apply -f -
+```
+Run a below command to Start the mlflow service service in a Microk8s cluster
+```bash
+kustomize build mlflowserver/overlays/microk8s | microk8s.kubectl apply -f -
 ```
 command to verify the pod running status
 ```bash
