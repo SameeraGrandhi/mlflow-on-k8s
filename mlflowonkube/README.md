@@ -59,7 +59,7 @@ entry_points:
 * **Example Kubernetes backend configuration**
  ```json
 	 {
-	    "kube-context": "minikube",
+	    "kube-context": "<kube-context name>",
 	    "kube-job-template-path": "<kubernetes_job_template.yaml path>",
 	    "repository-uri": "<Docker image name>"
 	 }
