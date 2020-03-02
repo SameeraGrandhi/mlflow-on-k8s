@@ -143,7 +143,7 @@ spec:
 Run a below command to Start the mysql service in a Mini-Kube cluster
 ```bash
 cd <mysql manifest folder>
-kustomize build mysql/overlays/minikube | microk8s.kubectl apply -f -
+kustomize build mysql/overlays/minikube | kubectl apply -f -
 ```
 
 Run a below command to Start the mysql service in a MicroK8s cluster
@@ -335,7 +335,7 @@ spec:
 #####  Step 5:  Start Mlflow server Service in a container
 Run a below command to Start the mlflow service service in a MiniKube cluster
 ```bash
-kustomize build mlflowserver/overlays/minikube | microk8s.kubectl apply -f -
+kustomize build mlflowserver/overlays/minikube | kubectl apply -f -
 ```
 Run a below command to Start the mlflow service service in a Microk8s cluster
 ```bash
