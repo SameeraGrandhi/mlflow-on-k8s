@@ -23,3 +23,66 @@ Run below command to create namespace in kubernetes
 ```
 $ kubectl create ns <your namespace>
 ```
+
+### 4. Addtional Required service deployment process
+The following service are required to run a mlflow project on kuberenets Cluster
+1. Mysql
+2. Mlflow Server
+3. Nexus
+
+To Deploy this process mannually please check this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Manual-Deployment-process-for-additional-required-service)
+
+To Automate this deployment process. please follow the below steps
+#### a. Update Meta data information in `setting.py`(src/lib/settings.py)
+```python
+config = {
+  "namespace": "mlflowonkube",
+  "cluster": "minikube",
+  "master_ip":"172.17.1.229",
+  "kubectl":"microk8s.kubectl",
+  "kube_context":"minikube",
+  "mysql": {
+    "user":"pramati_new1",
+    "password": "password123",
+    "dbname":"mlflow",
+    "port":"3306",
+    "nodePort":"30036",
+    "mountPath": "/var/lib/mysql",
+    "storage":"1Gi",
+    "isSkip": False
+  },
+  "mlflow": {
+    "port":"5002",
+    "nodePort":"30035",
+    "mountPath": "/mnt/mlflow",
+    "storage":"1Gi",
+    "docker_image": "172.17.1.229:32000/mlflow-server:registry",
+    "isSkip": False
+  },
+  "nexsus": {
+    "mountPath": "/mnt/nexsus",
+    "docker_image": "",
+    "isSkip": False
+  },
+  "flask": {
+    "mountPath": "/mnt/mlflow",
+    "nodePort":"30091",
+    "docker_image": "172.17.1.229:32000/mlflow-flask:registry",
+    "run_id":"fe25e92156fa4b10b6b3a165a31ce676"
+  },
+  "kube_job": {
+    "projectname":"mlflow_on_kubernetes",
+    "mountPath": "/mnt/mlflow",
+    "entry_cmd":"train.py --alpha {alpha} --l1-ratio {l1_ratio}",
+    "docker_image": "172.17.1.229:32000/mlflow-flask:registry",
+    "limit_mem":"512Mi",
+    "requests_mem":"256Mi",
+    "maintainer" :"srinivasan.ramalingam@imaginea.com"
+  }
+}
+```
+
+#### a. Run below command to start the aumotated process
+```bash
+python service_helper.py --setup_platform
+```
