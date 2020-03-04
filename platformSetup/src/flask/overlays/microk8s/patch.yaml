@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: mlflowserver
+   name: flaskapi-deployment
    namespace: {{namespace}}
 spec:
    template:
       spec:
          containers:
-         -  name: mlflowserver
-            image: localhost:32000/mlflow-server:registry
+         -  name: flaskapi
+            image: localhost:32000/mlflow-flask:registry

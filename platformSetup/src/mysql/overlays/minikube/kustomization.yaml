@@ -1,4 +1,4 @@
 resources:
 - mysql-pv.yaml
 - ../../base
-namePrefix: minikube-
+namePrefix: {{cluster}}-

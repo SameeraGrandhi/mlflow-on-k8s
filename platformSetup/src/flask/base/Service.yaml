@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: flaskapi-service
+   namespace: {{namespace}}
+spec:
+   selector:
+      app: flaskapi
+   type: NodePort
+   ports:
+   -  protocol: TCP
+      port: 9791
+      targetPort: 9791
+      nodePort: {{flask.nodePort}}

@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+   name: {{kube_job.projectname}}
+   namespace: {{namespace}}
+spec:
+   ttlSecondsAfterFinished: 100
+   backoffLimit: 1
+   template:
+      spec:
+         containers:
+         -  name: {{kube_job.projectname}}
+            image: {{namespace}}
+            command:
+            - {{kube_job.entry_cmd}}
+            volumeMounts:
+            -  name: mlflow-persistent-storage
+               mountPath: {{kube_job.mountPath}}
+         volumes:
+         -  name: mlflow-persistent-storage
+            persistentVolumeClaim:
+               claimName: {{cluster}}-mlflow-pv-claim
+         resources:
+            limits:
+               memory: {{kube_job.limit_mem}}
+            requests:
+               memory: {{kube_job.requests_mem}}
+         restartPolicy: Never

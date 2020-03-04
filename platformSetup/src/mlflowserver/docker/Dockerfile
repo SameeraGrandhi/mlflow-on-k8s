@@ -3,10 +3,10 @@ FROM ubuntu:latest
 LABEL maintainer="srinivasan.ramalingam@imaginea.com"
 
 ENV MLFLOW_HOME /app/mlflow
-ENV SERVER_PORT 5002
+ENV SERVER_PORT {{mlflow.port}}
 ENV SERVER_HOST 0.0.0.0
-ENV ARTIFACT_STORE /mnt/mlflow
-ENV BACKEND_STORE mysql+mysqldb://pramati:password123@172.17.1.229:30036/mlflow
+ENV ARTIFACT_STORE {{mlflow.mountPath}}
+ENV BACKEND_STORE mysql+mysqldb://{{mysql.user}}:{{mysql.password}}@{{master_ip}}:{{mlflow.nodePort}}/{{mysql.dbname}}
 
 
 RUN apt-get update \

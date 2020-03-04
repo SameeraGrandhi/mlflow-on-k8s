@@ -1,0 +1,5 @@
+{
+    "kube-context": "{{kube_context}}",
+    "kube-job-template-path": "{{kube_job.projectname}}/kubernetes_job_template.yaml",
+    "repository-uri": "{{kube_job.docker_image}}"
+}

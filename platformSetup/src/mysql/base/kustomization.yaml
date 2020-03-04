@@ -1,8 +1,8 @@
 secretGenerator:
 - name: mysql-pass
-  namespace: mlflowonkube
+  namespace: {{ namspace }}
   literals:
-  - password=password123
+  - password={{ mysql.password }}
 resources:
 - service.yaml
 - mysql-deployment.yaml

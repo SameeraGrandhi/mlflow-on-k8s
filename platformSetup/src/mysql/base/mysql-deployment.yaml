@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: mlflowonkube
+  namespace: {{namespace}}
 spec:
   selector:
     matchLabels:
@@ -24,13 +24,12 @@ spec:
               name: mysql-pass
               key: password
         ports:
-        - containerPort: 3306
+        - containerPort: {{mysql.port}}
           name: mysql
         volumeMounts:
         - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql
+          mountPath: {{mysql.mountPath}}
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
           claimName: mysql-pv-claim
-          

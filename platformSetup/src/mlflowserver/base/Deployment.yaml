@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: mlflowserver
-   namespace: mlflowonkube
+   namespace: {{namespace}}
 spec:
    selector:
       matchLabels:
@@ -16,13 +16,13 @@ spec:
       spec:
          containers:
          -  name: mlflowserver
-            image: srinivasanpramati2020/mlflowui
+            image: {{mlflow.docker_image}}
             ports:
-            -  containerPort: 5002
+            -  containerPort: {{mlflow.port}}
                name: mlflowserver
             volumeMounts:
             -  name: mlflow-persistent-storage
-               mountPath: /mnt/mlflow
+               mountPath: {{mlflow.mountPath}}
          volumes:
          -  name: mlflow-persistent-storage
             persistentVolumeClaim:

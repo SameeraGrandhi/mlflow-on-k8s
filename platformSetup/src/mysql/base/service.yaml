@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mysql
-  namespace: mlflowonkube
+  namespace: {{namespace}}
 spec:
   type: NodePort
   ports:
-  - port: 3306
-    nodePort: 30036
+  - port: {{mysql.port}}
+    nodePort: {{mysql.nodePort}}
     name: http
   selector:
     app: mysql
