@@ -86,3 +86,19 @@ config = {
 ```bash
 python service_helper.py --setup_platform
 ```
+
+##### a.1 command to build Sample Mlflow project
+```bash
+python service_helper.py --get_ml_template
+```
+```bash
+__main__     INFO     current output Directory Path /home/srinivasan/workspace_python/cluster_setup/output/1583304596398
+docker.utils.config DEBUG    Trying paths: ['/home/srinivasan/.docker/config.json', '/home/srinivasan/.dockercfg']
+docker.utils.config DEBUG    Found file at path: /home/srinivasan/.docker/config.json
+docker.auth  DEBUG    Found 'auths' section
+docker.auth  DEBUG    Found entry (registry='192.168.39.85:30002', username='admin')
+docker.auth  DEBUG    Found entry (registry='https://index.docker.io/v1/', username='srinivasanpramati2020')
+__main__     INFO     template render the files in /home/srinivasan/workspace_python/cluster_setup/src/lib/template/mlflow folder
+__main__     INFO     template has been generated in MlflowTemplateGen service
+__main__     INFO     Sample Template generated in /home/srinivasan/workspace_python/cluster_setup/output/1583304596398/mlflow_on_kubernetes folder
+```
