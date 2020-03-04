@@ -10,18 +10,9 @@ spec:
       spec:
          containers:
          -  name: mlflow-on-kubernetes
-            image: srinivasanpramati2020/mlflow-on-kubernetes-docker
+            image: localhost:32000/mlflow-on-kubernetes-docker
             command:
             - python train.py --alpha {alpha} --l1-ratio {l1_ratio}
-            volumeMounts:
-            -  name: mlflow-persistent-storage
-               mountPath: /mnt/mlflow
-         imagePullSecrets:
-         -  name: regcred
-         volumes:
-         -  name: mlflow-persistent-storage
-            persistentVolumeClaim:
-               claimName: mlflow-pv-claim
          resources:
             limits:
                memory: 512Mi

@@ -1,5 +1,5 @@
 {
-    "kube-context": "minikube",
+    "kube-context": "microk8s",
     "kube-job-template-path": "mlflowonkube/kubernetes_job_template.yaml",
-    "repository-uri": "srinivasanpramati2020/mlflow-on-kubernetes-docker"
+    "repository-uri": "localhost:32000/mlflow-on-kubernetes-docker:registry"
 }

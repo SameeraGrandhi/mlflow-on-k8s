@@ -1,6 +1,6 @@
 name: mlflow-on-kubernetes
 docker_env:
-   image: srinivasanpramati2020/mlflow-on-kubernetes-docker
+   image: localhost:32000/mlflow-on-kubernetes-docker:registry
    
 entry_points:
   main:
