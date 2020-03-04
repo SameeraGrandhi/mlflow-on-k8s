@@ -61,7 +61,7 @@ entry_points:
 * **Example Kubernetes backend configuration**
  ```json
 	 {
-	    "kube-context": "<kube-context name>",
+	    "kube-context": "<kube-context name>", # get kube-context name from ~/.kube/config 
 	    "kube-job-template-path": "<kubernetes_job_template.yaml path>",
 	    "repository-uri": "<Docker image name>"
 	 }
