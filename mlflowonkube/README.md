@@ -115,7 +115,7 @@ spec:
 
 ##### Step5. Run the Project using the MLflow Projects CLI 
 ```bash
-export MLFLOW_TRACKING_URI=http://<minikube_ip>:30035
+export MLFLOW_TRACKING_URI=http://<ip>:30035
 mlflow run <project_dir> --backend kubernetes --backend-config <project_dir>/kubernetes_config.json -P alpha=0.5
 
 ```
