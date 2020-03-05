@@ -66,7 +66,7 @@ config = {
   },
   "nexsus": {
     "mountPath": "/mnt/nexsus",
-    "docker_image": "",
+    "docker_image": "sonatype/nexus3",
     "isSkip": False
   },
   "flask": {
@@ -94,7 +94,7 @@ python service_helper.py --setup_platform
 
 ##### a.1 command to build Sample Mlflow project
 ```bash
-python service_helper.py --get_ml_template
+python service_helper.py --generate_ml_template
 ```
 ```bash
 __main__     INFO     current output Directory Path /home/srinivasan/workspace_python/cluster_setup/output/1583304596398
