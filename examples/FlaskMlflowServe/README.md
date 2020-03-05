@@ -114,6 +114,11 @@ In Microk8s
 cd <flask service manifest folder>
 kustomize build kubernetes/overlays/microk8s | microk8s.kubectl apply -f -
 ```
+After running, you can view the services through Flask Dashboard:
+
+In the browser, go to http://<ip>:30091/
+
+<img src="img/flask_ui.png" width="1000" height="500" />
 
 command to verify the pod running status
 ```bash
