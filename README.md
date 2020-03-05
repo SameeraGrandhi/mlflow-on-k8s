@@ -12,7 +12,7 @@ The purpose of the project is to demonstrates  how to create,dockerized and run 
 2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
 3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
 
-# Platform Setup
+## Platform Setup
 This context describes all the installation process for To run Mlflow project on  minikube/microk8s Cluster starting from scratch. This will covers all aspect of its installation including all various softwares needed & how to deploy the required services on kubernetes cluster.
 
 ### 1. Install MiniKube/Microk8s Cluster
