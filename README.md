@@ -5,7 +5,7 @@ The purpose of the project is to demonstrates  how to create,dockerized and run 
 **Note:** to understand more on this repo. please ref this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
 
 ## Getting Started
-   pass
+   Todo
 
 ## Steps to run kuberenetes job
 1. Platform Setup
@@ -100,7 +100,7 @@ python service_helper.py --setup_platform
 ```
 
 After running, you can view the result through Kubernetes Dashboard:
-In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may be varied``), you will get the following service are up.
+In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may be varied in your case``), you will get the following service are up.
 1. Mysql
 2. Mlfowserver
 3. Nexus
