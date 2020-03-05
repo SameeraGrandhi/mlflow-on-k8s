@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-   name: mlflow-on-kubernetes
+   name: LogisticRegression
    namespace: mlflowonkube
 spec:
    ttlSecondsAfterFinished: 100
@@ -9,7 +9,7 @@ spec:
    template:
       spec:
          containers:
-         -  name: mlflow-on-kubernetes
+         -  name: LogisticRegression
             image: localhost:32000/mlflow-on-kubernetes-docker
             command:
             - python train.py --alpha {alpha} --l1-ratio {l1_ratio}

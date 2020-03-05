@@ -1,4 +1,4 @@
-name: mlflow-on-kubernetes
+name: LogisticRegression
 docker_env:
    image: localhost:32000/mlflow-on-kubernetes-docker:registry
    
