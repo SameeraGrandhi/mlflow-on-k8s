@@ -1,5 +1,5 @@
 ## Run an MLflow Project on Kubernetes
-In this code we demonstrate how a simple Mlflow Project can be deployed & Run on top of  **Kubernetes** & this MLflow project that trains a linear regression model on the Wine Quality Dataset to predict the quality of red wine on a scale of 0–10 given a set of features as inputs. The project uses a Docker image to capture the dependencies needed to run training code. Running a project in a Docker environment allows for capturing non-Python dependencies.
+In this code we demonstrate how a simple Mlflow Project can be deployed & Run on top of  **Kubernetes**. This MLflow project that trains a linear regression model on the Wine Quality Dataset to predict the quality of red wine on a scale of 0–10 given a set of features as inputs. The project uses a Docker image to capture the dependencies needed to run training code. Running a project in a Docker environment allows for capturing non-Python dependencies.
 
 `Note`: In Demo purpose we used MicroK8s cluster with Longhorn- distributed block cloud native storage
 ### Download Wine quliaty Dataset
