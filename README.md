@@ -1,5 +1,6 @@
 # MLflow Project on Kubernetes
-  A Simple MLFLow Project will demonstrates how to create,dockerized and run an MLflow project on Kubernets cluster to manage project dependencies
+  
+The purpose of the project is to demonstrates  how to create,dockerized and run an MLflow project on Kubernets cluster to manage project dependencies  and  to create a convenient and easy-to-use application for DataSciene Team to run an mlfow project on kubernetes cluster with out having any prior knowelege on the Dev ops side to train  ml model & model serve.
 
 **Note:** to understand more on this repo. please ref this [link](https://docs.google.com/presentation/d/1fyvNeqVVdXxR9KZsS0ksoWPO_4lg9n7FfMmnawbec-8/edit?usp=sharing)
 
@@ -14,7 +15,7 @@
 # Platform Setup
 This context describes all the installation process for To run Mlflow project on  minikube/microk8s Cluster starting from scratch. This will covers all aspect of its installation including all various softwares needed & how to deploy the required services on kubernetes cluster.
 
-### 1. Install MiniKube/Kubernetes Cluster
+### 1. Install MiniKube/Microk8s Cluster
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
 
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install Kubernetes Cluster using microk8s
