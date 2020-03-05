@@ -133,6 +133,7 @@ After running, you can view the result through MLflow UI:
 
 In the browser, go to http://127.0.0.1:30050, you will get the following results.
 
+<img src="img/mlflowui.png" width="1000" height="500" />
 
  ### How it works
  When you run an MLflow Project on Kubernetes it will execute below steps
