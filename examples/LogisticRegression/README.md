@@ -40,7 +40,7 @@ RUN mkdir /opt/mlflow
 ##### Step2. Create MlFow Project File using Docker Enviroment
 Update your Docker image name,list of parameters and command based on your use case
 ```yaml
-name: mlflow-on-kubernetes
+name: LogisticRegression
 docker_env:
    image: <Docker image name>
 entry_points:
