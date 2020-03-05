@@ -2,7 +2,7 @@
   
 The purpose of the project is demonstrated  how to create, dockerized and run an MLflow project in the kubernetes cluster to manage project dependencies  and  to create a convenient and easy-to-use application for DataSciene Team to run an mlfow project on kubernetes cluster without having any prior knowledge on the Dev ops side to train  ml model & model serve.
 
-**Note:** to understand more on this repo. please ref this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
+**Note:** people who want to understand more on this project by knowing how does implemented. please click this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
 
 ## Getting Started
    Todo
@@ -13,7 +13,7 @@ The purpose of the project is demonstrated  how to create, dockerized and run an
 3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
 
 ## Platform Setup
-This context describes all the installation process for To run Mlflow project on  minikube/microk8s Cluster starting from scratch. This will covers all aspect of its installation including all various softwares needed & how to deploy the required services on kubernetes cluster.
+The followed context describes all the installation process for To run the Mlflow project on  minikube/microk8s Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster.
 
 ### 1. Install MiniKube/Microk8s Cluster
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
@@ -107,7 +107,7 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 
 <img src="img/kubernetes.png" width="1000" height="500" />
 
-##### a.1 command to build Sample Mlflow project
+##### a.1 command to generate Sample Mlflow project
 ```bash
 python service_helper.py --generate_ml_template
 ```
