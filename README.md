@@ -45,7 +45,7 @@ config = {
   "cluster": "microk8s", # cluster type name based on your installation
   "master_ip":"172.17.1.229",  
   "kubectl":"microk8s.kubectl", #kubernetes command line
-  "kube_context":"microk8s", #get kube context name from `~/.kube/config`
+  "kube_context":"microk8s", #get kube context name from `~/.kube/config` file
   "mysql": {
     "user":"pramati", #mysql username
     "password": "password123", #mysql password
