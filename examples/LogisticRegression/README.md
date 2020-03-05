@@ -1,6 +1,7 @@
 ## Run an MLflow Project on Kubernetes
-In this code we demonstrate how a simple Mlflow Project can be deployed & Run on top of **Kubernetes**. This Simple mlflow Project task here is to predict the quality of red wine on a scale of 0–10 given a set of features as inputs using Linear Regression.
+In this code we demonstrate how a simple Mlflow Project can be deployed & Run on top of  **Kubernetes** & this MLflow project that trains a linear regression model on the Wine Quality Dataset to predict the quality of red wine on a scale of 0–10 given a set of features as inputs. The project uses a Docker image to capture the dependencies needed to run training code. Running a project in a Docker environment allows for capturing non-Python dependencies.
 
+`Note`: In Demo purpose we used MicroK8s cluster with Longhorn- distributed block cloud native storage
 ### Download Wine quliaty Dataset
 please use this [link](https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv)  to Download wine-quality Dataset & rename the file name into ***wine-quality.csv***
 ### Execution guide
@@ -117,8 +118,21 @@ spec:
 ```bash
 export MLFLOW_TRACKING_URI=http://<ip>:30035
 mlflow run <project_dir> --backend kubernetes --backend-config <project_dir>/kubernetes_config.json -P alpha=0.5
-
 ```
+After the code successfully runs, you can get the following results:
+```bash
+2020/03/05 12:30:51 INFO mlflow.projects: === Building docker image srinivasanpramati2020/mlflow-on-kubernetes-docker:ddcbdff ===
+2020/03/05 12:30:59 INFO mlflow.projects.kubernetes: === Pushing docker image srinivasanpramati2020/mlflow-on-kubernetes-docker:ddcbdff ===
+2020/03/05 12:34:49 INFO mlflow.projects: === Created directory /tmp/tmpu6b4fm1m for downloading remote URIs passed to arguments of type 'path' ===
+2020/03/05 12:34:49 INFO mlflow.projects.kubernetes: === Creating Job linear-crf-with-spatial-features-2020-03-05-12-34-49-025410 ===
+2020/03/05 12:34:49 INFO mlflow.projects.kubernetes: Job started.
+2020/03/05 12:37:34 INFO mlflow.projects.kubernetes: None
+2020/03/05 12:37:34 INFO mlflow.projects: === Run (ID '44c87908562f4f3cbeda17c5bbc5ef98') succeeded ===
+```
+After running, you can view the result through MLflow UI:
+
+In the browser, go to http://127.0.0.1:30050, you will get the following results.
+
 
  ### How it works
  When you run an MLflow Project on Kubernetes it will execute below steps
