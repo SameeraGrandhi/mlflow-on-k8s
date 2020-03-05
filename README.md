@@ -15,26 +15,26 @@ The purpose of the project is demonstrated  how to create, dockerized and run an
    * Virtualbox/Kvm Driver - for Minikube setup
 
 
-## Steps to run kuberenetes job
+### Steps to run kuberenetes job
 1. Platform Setup
 2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
 3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
 
-## Platform Setup
+### Platform Setup
 The followed context describes all the installation process for To run the Mlflow project on  minikube/microk8s Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster.
 
-### 1. Install MiniKube/Microk8s Cluster
+#### 1. Install MiniKube/Microk8s Cluster
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
 
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install Kubernetes Cluster using microk8s
 
-### 2. Clone the repo
+#### 2. Clone the repo
 Clone this repository. In a terminal, run:
 
 ```
 $ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
 ```
-### 3. Create namespace in kubernetes
+#### 3. Create namespace in kubernetes
 Run below command to create namespace in kubernetes
 ```
 # Minikube
@@ -44,7 +44,7 @@ $ kubectl create ns <your namespace>
 $ microk8s.kubectl create ns <your namespace>
 ```
 
-### 4. Addtional Required service deployment process
+#### 4. Addtional Required service deployment process
 The following service are required to run a mlflow project on kuberenets Cluster
 1. Mysql
 2. Mlflow Server
@@ -53,7 +53,7 @@ The following service are required to run a mlflow project on kuberenets Cluster
 If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Manual-Deployment-process-for-additional-required-service)
 
 If you want to deploy the services through automation process, follow these general configuration and deployment steps
-#### a. Update Meta data information in `setting.py`(src/lib/settings.py)
+##### a. Update Meta data information in `setting.py`(src/lib/settings.py)
 ```python
 config = {
   "namespace": "mlflowonkube",
@@ -102,7 +102,7 @@ config = {
 }
 ```
 
-#### a. Run below command to start the aumotated process
+##### a. Run below command to start the aumotated process
 ```bash
 python service_helper.py --setup_platform
 ```
@@ -115,7 +115,7 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 
 <img src="img/kubernetes.png" width="1000" height="500" />
 
-##### a.1 command to generate Sample Mlflow project
+###### a.1 command to generate Sample Mlflow project
 ```bash
 python service_helper.py --generate_ml_template
 ```
