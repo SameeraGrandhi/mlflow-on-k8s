@@ -100,7 +100,10 @@ python service_helper.py --setup_platform
 ```
 
 After running, you can view the result through Kubernetes Dashboard:
-In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may be varied``), you will get the following results.
+In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may be varied``), you will get the following service are up.
+1. Mysql
+2. Mlfowserver
+3. Nexus
 
 <img src="img/kubernetes.png" width="1000" height="500" />
 
