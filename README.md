@@ -7,6 +7,14 @@ The purpose of the project is demonstrated  how to create, dockerized and run an
 ## Getting Started
    Todo
 
+### Software Prerequisites
+1. Use Python 3.6
+2. Linux-specific Software Requirements
+   * Ubuntu 18.04
+   * Snap  - for microk8s setup
+   * Virtualbox/Kvm Driver - for Minikube setup
+
+
 ## Steps to run kuberenetes job
 1. Platform Setup
 2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
