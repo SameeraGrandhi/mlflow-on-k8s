@@ -17,10 +17,6 @@ Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis
 
 Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install Kubernetes Cluster using microk8s
 
-Check the [wiki](https://gitlab.pramati.com/devops-practise/kubernetes/wikis/Getting-Started) to Install Kubernetes Cluster
-
-
-
 ### 2. Clone the repo
 Clone this repository. In a terminal, run:
 
@@ -46,7 +42,7 @@ To Automate this deployment process. please follow the below steps
 ```python
 config = {
   "namespace": "mlflowonkube",
-  "cluster": "minikube",
+  "cluster": "minikube", 
   "master_ip":"172.17.1.229",
   "kubectl":"microk8s.kubectl",
   "kube_context":"minikube",
