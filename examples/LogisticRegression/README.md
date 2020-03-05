@@ -128,6 +128,7 @@ After the code successfully runs, you can get the following results:
 2020/03/05 12:37:34 INFO mlflow.projects: === Run (ID '44c87908562f4f3cbeda17c5bbc5ef98') succeeded ===
 ```
 After running, you can view the result through MLflow UI:
+
 In the browser, go to http://127.0.0.1:30050, you will get the following results.
 
 
