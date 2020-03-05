@@ -4,8 +4,8 @@
 **Note:** to understand more on this repo. please ref this [link](https://docs.google.com/presentation/d/1fyvNeqVVdXxR9KZsS0ksoWPO_4lg9n7FfMmnawbec-8/edit?usp=sharing)
 ## Steps to run kuberenetes job
 1. Platform Setup
-2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/mlflowonkube)
-3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/modelFlaskApp)
+2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
+3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
 
 # Platform Setup
 This context describes all the installation process for To run Mlflow project on  minikube/Kubernetes Cluster starting from scratch. This will covers all aspect of its installation including all various softwares needed, and how to deploy the required services on kubernetes cluster.
