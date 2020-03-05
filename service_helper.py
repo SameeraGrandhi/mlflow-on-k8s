@@ -272,14 +272,14 @@ class TemplateGeneration(Service):
 @click.command()
 @click.option('--setup_platform', is_flag=True, help="Will help us to set platform.")
 @click.option('--flask_deploy', is_flag=True, help="Will help us to deploy flask application.")
-@click.option('--get_ml_template', is_flag=True, help="Will help us to generate Mlflow on Kubernetes template.")
-def cli(setup_platform, flask_deploy, get_ml_template):
+@click.option('--generate-ml-template', is_flag=True, help="Will help us to generate Mlflow on Kubernetes template.")
+def cli(setup_platform, flask_deploy, generate-ml-template):
     logger.info("current output Directory Path {}".format(settings.OUTPUT_DIR))
     if setup_platform:
         LaunchService(settings.config).launch()
     if flask_deploy:
         FlaskService(settings.config).prepareAndRun()
-    if get_ml_template:
+    if generate-ml-template:
         TemplateGeneration(settings.config).prepareAndRun()
 
 
