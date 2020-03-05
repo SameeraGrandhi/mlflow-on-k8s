@@ -2,7 +2,7 @@
   
 The purpose of the project is to demonstrates  how to create,dockerized and run an MLflow project on Kubernets cluster to manage project dependencies  and  to create a convenient and easy-to-use application for DataSciene Team to run an mlfow project on kubernetes cluster with out having any prior knowelege on the Dev ops side to train  ml model & model serve.
 
-**Note:** to understand more on this repo. please ref this [link](https://docs.google.com/presentation/d/1fyvNeqVVdXxR9KZsS0ksoWPO_4lg9n7FfMmnawbec-8/edit?usp=sharing)
+**Note:** to understand more on this repo. please ref this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
 
 ## Getting Started
    pass
