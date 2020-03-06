@@ -31,7 +31,7 @@ There are so many open source tools are available in market now a days to build 
 
 Install Minikube to work with Kubernetes on a local environment for purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
 
-Install Microk8s to work with Kubernetes on a Multi node cluster for purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install microk8s
+Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install microk8s
 
 
 #### 2. Clone the repo
