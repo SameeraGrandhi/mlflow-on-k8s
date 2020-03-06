@@ -27,7 +27,7 @@ The followed context describes all the installation process for To run the Mlflo
 4. Additional Software Requirements
 
 #### 1. Install MiniKube/Microk8s Cluster
-There are so many open source tools are available in market now a days for build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
+There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
 
 Install Minikube to work with Kubernetes on a local environment for purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
 
