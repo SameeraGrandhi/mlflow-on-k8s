@@ -48,7 +48,7 @@ $ kubectl create ns <your namespace>
 $ microk8s.kubectl create ns <your namespace>
 ```
 
-#### 4. Addtional Required service deployment process
+#### 4. Additional Software Requirements
 The following service are required to run a mlflow project on kuberenets Cluster
 1. Mysql
 2. Mlflow Server
