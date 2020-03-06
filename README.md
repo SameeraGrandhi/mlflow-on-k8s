@@ -5,9 +5,11 @@ The purpose of the project is demonstrated  how to create, dockerized and run an
 **Note:** people who want to understand more on this project by knowing how does implemented. please click this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
 
 ## Getting Started
-1. Platform Setup
-2. Create Mlflow Project based on the [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
-3. Create your ml model flask api service based on your use cases. Sample project [url](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
+
+When installing the Kubernetes cluster from scratch & scale out mlflow job on kubernetes we are encouraged to follow the order specified below
+1. Platform setup & configuration Steps
+2. Create MLflow project using docker (rather than conda) to manage project dependencies. [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
+3. Create your ml model serve flask api service based on your use cases. [Sample project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
 
 ### Software Prerequisites
 1. Use Python 3.6
