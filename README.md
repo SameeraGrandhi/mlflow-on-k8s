@@ -2,8 +2,6 @@
   
 The purpose of the project is demonstrated  how to create, dockerized and run an MLflow project in the kubernetes cluster to manage project dependencies  and  to create a convenient and easy-to-use application for DataSciene Team to run an mlfow project on kubernetes cluster without having any prior knowledge on the Dev ops side to train  ml model & model serve.
 
-**Note:** people who want to understand more on this project by knowing how does implemented. please click this [link](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/blob/master/mlflowonkubernetes.pdf)
-
 ## Getting Started
 
 When installing the Kubernetes cluster from scratch & scale out mlflow job on kubernetes we are encouraged to follow the order specified below
@@ -118,8 +116,6 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 1. Mysql
 2. Mlfowserver
 3. Nexus
-
-<img src="img/kubernetes.png" width="1000" height="500" />
 
 ###### a.1 command to generate Sample Mlflow project
 ```bash

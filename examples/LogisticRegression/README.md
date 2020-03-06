@@ -131,9 +131,8 @@ After the code successfully runs, you can get the following results:
 ```
 After running, you can view the result through MLflow UI:
 
-In the browser, go to http://127.0.0.1:30050, you will get the following results.
+In the browser, go to http://127.0.0.1:30050, you will get the job metrics,params & artifacts.
 
-<img src="img/mlflowui.png" width="1000" height="300" />
 
  ### How it works
  When you run an MLflow Project on Kubernetes it will execute below steps
