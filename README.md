@@ -13,8 +13,8 @@ more time on models and data than on platform.
 
 When installing the Kubernetes cluster from scratch & scale out mlflow job on kubernetes we are encouraged to follow the order specified below
 1. Platform setup & configuration Steps
-2. Create MLflow project using docker (rather than conda) to manage project dependencies. [sample Project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/LogisticRegression)
-3. Create your ml model serve flask api service based on your use cases. [Sample project](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/tree/master/examples/FlaskMlflowServe)
+2. Create MLflow project using docker (rather than conda) to manage project dependencies. [sample Project](examples/LogisticRegression)
+3. Create your ml model serve flask api service based on your use cases. [Sample project](examples/FlaskMlflowServe)
 
 ### Software Prerequisites
 1. Use Python 3.6
@@ -35,9 +35,9 @@ The followed context describes all the installation process for To run the Mlflo
 #### 1. Install MiniKube/Microk8s Cluster
 There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
 
-Install Minikube to work with Kubernetes on a local environment for purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
+Install Minikube to work with Kubernetes on a local environment for purpose. Check the [wiki](doc/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
 
-Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [wiki](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Install-microk8s(Mlulti-Node-cluster)) to Install microk8s
+Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [wiki](doc/Install-microk8s(Mlulti-Node-cluster)) to Install microk8s
 
 
 #### 2. Clone the repo
@@ -68,7 +68,7 @@ The following service are required to run a mlflow project on kuberenets Cluster
 2. Mlflow Server
 3. Nexus
 
-If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes/wikis/Manual-Deployment-process-for-additional-required-service)
+If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](doc/Manual-Deployment-process-for-additional-required-service)
 
 If you want to deploy the services through automation process, follow these general configuration and deployment steps
 ##### a. Update Meta data information in `setting.py`(src/lib/settings.py)
