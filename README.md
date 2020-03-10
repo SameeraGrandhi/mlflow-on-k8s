@@ -35,7 +35,7 @@ The followed context describes all the installation process for To run the Mlflo
 5. Additional Software Requirements
 
 #### 1. Install MiniKube/Microk8s/Amazon EKS Cluster
-There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube,Amazon EKS and Microk8s installation process. It depends on your needs you can install any one of them.
+There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube,Amazon EKS and Microk8s installation process. It depends on your needs you can **install any one** of them.
 * Install **Minikube** to work with Kubernetes on a local environment for purpose. Check the [Install-MiniKube-with-Kvm2-Driver.md](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
 * Install **Microk8s** to work with Kubernetes on a Multi node cluster purpose. Check the [Install-microk8s-Mlulti-Node-cluster.md](doc/Install-microk8s(Mlulti-Node-cluster).md) to Install microk8s
 * Install **Amazon EKS** to work with Kubernetes on a Multi node cluster purpose. Check the [Install-and-configure-Amazon-EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) to Install miok8s
