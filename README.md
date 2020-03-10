@@ -28,8 +28,9 @@ The followed context describes all the installation process for To run the Mlflo
 
 1. Install and configure the MiniKube/Microk8s Cluster
 2. Clone the repo
-3. Create a new Namespace for our application
-4. Additional Software Requirements
+3. Create a new namespace for our application
+4. Create a new secret for our application
+5. Additional Software Requirements
 
 #### 1. Install MiniKube/Microk8s Cluster
 There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
@@ -55,7 +56,13 @@ $ kubectl create ns <your namespace>
 $ microk8s.kubectl create ns <your namespace>
 ```
 
-#### 4. Additional Software Requirements
+#### 4. Create a new secret for our application
+Run below command to create secret in kubernetes
+```bash
+ kubectl create secret generic regcred -n <your namespace>  --from-file=.dockerconfigjson=/home/<username>/.docker/config.json --type=kubernetes.io/dockerconfigjson #replace username & namespace
+```
+
+#### 5. Additional Software Requirements
 The following service are required to run a mlflow project on kuberenets Cluster
 1. Mysql
 2. Mlflow Server
