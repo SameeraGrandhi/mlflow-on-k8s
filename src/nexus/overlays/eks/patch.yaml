@@ -4,14 +4,14 @@ metadata:
    name: nexus-service
    namespace: {{namespace}}
 spec:
-   type: NodePort
+   type: LoadBalancer
    ports:
    -  port: 8081
-      nodePort: 30001
+      targetPort: 8081
       protocol: TCP
       name: http
    -  port: 5000
-      nodePort: 30002
+      targetPort: 5000
       protocol: TCP
       name: docker
    selector:

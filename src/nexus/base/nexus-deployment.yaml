@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: nexus-deployment
-   namespace: mlflowonkube
+   namespace: {{namespace}}
 spec:
    selector:
       matchLabels:
@@ -15,14 +15,14 @@ spec:
             app: nexus
       spec:
          containers:
-         -  image: sonatype/nexus3
+         -  image: {{nexsus.docker_image}}
             imagePullPolicy: Always
             name: nexus
             ports:
             -  containerPort: 8081
             -  containerPort: 5000
             volumeMounts:
-            -  mountPath: /sonatype-work
+            -  mountPath: {{nexsus.mountPath}}
                name: nexus-data-volume
          volumes:
          -  name: nexus-data-volume

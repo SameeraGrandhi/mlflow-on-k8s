@@ -23,6 +23,8 @@ spec:
             volumeMounts:
             -  name: mlflow-persistent-storage
                mountPath: {{mlflow.mountPath}}
+         imagePullSecrets:
+         -  name: regcred
          volumes:
          -  name: mlflow-persistent-storage
             persistentVolumeClaim:

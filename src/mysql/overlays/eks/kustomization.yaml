@@ -1,0 +1,6 @@
+resources:
+- mysql-pvc.yaml
+- ../../base
+patchesStrategicMerge:
+- patch.yaml
+namePrefix: {{cluster}}-

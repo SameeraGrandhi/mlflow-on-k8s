@@ -1,14 +1,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-   name: nexus-local-pv-claim
+   name: mysql-pv-claim
    namespace: {{namespace}}
    labels:
-      app: nexus
+      app: mysql
 spec:
-   storageClassName: longhorn
    accessModes:
    - ReadWriteOnce
    resources:
       requests:
-         storage: 1Gi
+         storage: {{mysql.storage}}

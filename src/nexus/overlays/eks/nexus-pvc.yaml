@@ -6,7 +6,6 @@ metadata:
    labels:
       app: nexus
 spec:
-   storageClassName: longhorn
    accessModes:
    - ReadWriteOnce
    resources:

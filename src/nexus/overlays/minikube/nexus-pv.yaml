@@ -2,7 +2,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
    name: nexus-local-pv
-   namespace: mlflowonkube
+   namespace: {{namespace}}
    labels:
       type: local
 spec:
@@ -12,13 +12,13 @@ spec:
    accessModes:
    - ReadWriteOnce
    hostPath:
-      path: /mnt/volume-local
+      path: {{nexsus.mountPath}}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
    name: nexus-local-pv-claim
-   namespace: mlflowonkube
+   namespace: {{namespace}}
    labels:
       app: nexus
 spec:

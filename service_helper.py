@@ -285,3 +285,4 @@ def cli(setup_platform, flask_deploy, generate_ml_template):
 
 if __name__ == '__main__':
     cli()
+

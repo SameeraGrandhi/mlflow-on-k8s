@@ -1,0 +1,6 @@
+resources:
+- nexus-pvc.yaml
+- ../../base
+patchesStrategicMerge:
+- patch.yaml
+namePrefix: {{cluster}}-
