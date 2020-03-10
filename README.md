@@ -26,7 +26,7 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
    * Virtualbox/Kvm Driver - for Minikube setup
 
 ### Platform setup & configuration Steps
-The followed context describes all the installation process for To run the Mlflow project on  minikube/microk8s Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster. Follow these general installation and configuration steps, located in this below section
+The followed context describes all the installation process for to run the Mlflow project on  **Amazon EKS/minikube/microk8s** Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster. Follow these general installation and configuration steps, located in this below section
 
 1. Install and configure the MiniKube/Microk8s Cluster
 2. Clone the repo
@@ -51,7 +51,7 @@ $ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
 #### 3. Create namespace in kubernetes
 Run below command to create namespace in kubernetes
 ```
-# Minikube
+# Minikube/EKS
 $ kubectl create ns <your namespace>
 
 # MicroK8s
