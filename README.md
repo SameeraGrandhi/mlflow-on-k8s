@@ -1,6 +1,13 @@
 # MLflow Project on Kubernetes
   
-The purpose of the project is demonstrated  how to create, dockerized and run an MLflow project in the kubernetes cluster to manage project dependencies  and  to create a convenient and easy-to-use application for DataSciene Team to run an mlfow project on kubernetes cluster without having any prior knowledge on the Dev ops side to train  ml model & model serve.
+The purpose of the project is to demonstrate how to create, dockerized and run a
+MLflow project in the kubernetes cluster. Data science team gets easy access to the 
+scalable kubernetes platform with MLFlow to train, test and deploy the models. 
+Also gets standard pipeline templates to manage project dependencies and create 
+a convenient model pipelines with model serving for Data Science Team. The templates 
+provided are simple enough for Data Science team to consume, so that they can spend
+more time on models and data than on platform.
+
 
 ## Getting Started
 
