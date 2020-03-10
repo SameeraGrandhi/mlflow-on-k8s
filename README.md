@@ -32,12 +32,14 @@ The followed context describes all the installation process for To run the Mlflo
 4. Create a new secret for our application
 5. Additional Software Requirements
 
-#### 1. Install MiniKube/Microk8s Cluster
-There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
+#### 1. Install MiniKube/Microk8s/Amazon EKS Cluster
+There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube,Amazon EKS and Microk8s installation process
 
 Install Minikube to work with Kubernetes on a local environment for purpose. Check the [Install-MiniKube-with-Kvm2-Driver.md](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
 
-Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [Install-microk8s-Mlulti-Node-cluster.md](doc/Install-microk8s(Mlulti-Node-cluster).md)) to Install microk8s
+Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [Install-microk8s-Mlulti-Node-cluster.md](doc/Install-microk8s(Mlulti-Node-cluster).md) to Install microk8s
+
+Install Amazon EKS to work with Kubernetes on a Multi node cluster purpose. Check the [Install-and-configure-Amazon-EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) to Install microk8s
 
 
 #### 2. Clone the repo
@@ -68,7 +70,7 @@ The following service are required to run a mlflow project on kuberenets Cluster
 2. Mlflow Server
 3. Nexus
 
-If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](doc/Manual-Deployment-process-for-additional-required-service)
+If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](doc/Manual-Deployment-process-for-additional-required-service.md)
 
 If you want to deploy the services through automation process, follow these general configuration and deployment steps
 ##### a. Update Meta data information in `setting.py`(src/lib/settings.py)
