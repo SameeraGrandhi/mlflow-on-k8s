@@ -40,6 +40,8 @@ There are so many open source tools are available in market now a days to build 
 * Install **Microk8s** to work with Kubernetes on a Multi node cluster purpose. Check the [Install-microk8s-Mlulti-Node-cluster.md](doc/Install-microk8s(Mlulti-Node-cluster).md) to Install microk8s
 * Install **Amazon EKS** to work with Kubernetes on a Multi node cluster purpose. Check the [Install-and-configure-Amazon-EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) to Install miok8s
 
+##### Note: In our Example project we used Microk8s
+
 #### 2. Clone the repo
 Clone this repository. In a terminal, run:
 
