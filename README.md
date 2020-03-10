@@ -16,7 +16,7 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
 2. Create MLflow project using docker (rather than conda) to manage project dependencies. [sample Project](examples/LogisticRegression)
 3. Create your ml model serve flask api service based on your use cases. [Sample project](examples/FlaskMlflowServe)
 
-#### flow Diagram
+### End to End Flow Diagram:
 ![wkg](doc/uploads/flow_dia.png)
 ### Software Prerequisites
 1. Use Python 3.6
