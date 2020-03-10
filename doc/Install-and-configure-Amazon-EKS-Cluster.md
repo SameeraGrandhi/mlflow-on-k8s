@@ -267,3 +267,4 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 4. Choose Token, paste the <authentication_token> output from the previous command into the Token field, and choose SIGN IN.
 ![sin](uploads/0efed285cff25278338b95100133053e/sin.png)
 
+### Note: Push Docker image to Amazon ECR. please read this [DOC](doc/Steps-To-Push-An-Image-Into-Amazon-ECR-With-Docker.md)
