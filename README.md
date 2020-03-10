@@ -35,9 +35,9 @@ The followed context describes all the installation process for To run the Mlflo
 #### 1. Install MiniKube/Microk8s Cluster
 There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube and Microk8s installation process
 
-Install Minikube to work with Kubernetes on a local environment for purpose. Check the [wiki](doc/Install-MiniKube-with-Kvm2-Driver) to Install MiniKube with Kvm2 Driver
+Install Minikube to work with Kubernetes on a local environment for purpose. Check the [Install-MiniKube-with-Kvm2-Driver.md](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
 
-Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [wiki](doc/Install-microk8s(Mlulti-Node-cluster)) to Install microk8s
+Install Microk8s to work with Kubernetes on a Multi node cluster purpose. Check the [Install-microk8s-Mlulti-Node-cluster.md](doc/Install-microk8s(Mlulti-Node-cluster).md)) to Install microk8s
 
 
 #### 2. Clone the repo
