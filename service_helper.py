@@ -19,6 +19,7 @@ from src.lib import settings, utils
 logger = logging.getLogger(__name__)
 
 
+
 class DockerClient(object):
     
     def __init__(self):
@@ -158,9 +159,14 @@ class Service(IService, DockerClient):
         import subprocess
         import sys
         process = subprocess.Popen(cmd,
-                                   stdout=subprocess.PIPE,shell=True)
-        for line in process.stdout:
-            sys.stdout.write(line.decode('utf-8'))
+                                   stdout=subprocess.PIPE,stderr=subprocess.STDOUT,shell=True)
+        #print(process.stdout.read())
+        for _line in process.stdout:
+            line=_line.decode('utf-8')
+            sys.stdout.write(line)
+            if 'error' in line or 'refused' in line:
+                process.kill()
+                raise Exception("Error while Executing command:{}".format(line))
         process.kill()
 
     
@@ -277,7 +283,11 @@ class TemplateGeneration(Service):
 def cli(setup_platform, flask_deploy, generate_ml_template):
     logger.info("current output Directory Path {}".format(settings.OUTPUT_DIR))
     if setup_platform:
-        LaunchService(settings.config).launch()
+        conf=settings.config
+        import base64
+        passw=conf['mysql']['password']
+        conf['enc_password']=str(base64.b64encode(passw.encode('utf-8')), 'utf-8')
+        LaunchService(conf).launch()
     if flask_deploy:
         FlaskService(settings.config).prepareAndRun()
     if generate_ml_template:
