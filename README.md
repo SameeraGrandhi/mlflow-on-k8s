@@ -74,8 +74,6 @@ The following service are required to run a mlflow project on kuberenets Cluster
 2. Mlflow Server
 3. Nexus
 
-If you do not want to deploy the services through  automation process, use these alternate, [manual deployment procedures](doc/Manual-Deployment-process-for-additional-required-service.md)
-
 If you want to deploy the services through automation process, follow these general configuration and deployment steps
 ##### a. Update Meta data information in `setting.py`(src/lib/settings.py)
 ```python
@@ -125,6 +123,9 @@ config = {
   }
 }
 ```
+
+##### Note: To understand more in detail how this process internally works check this [doc](doc/Manual-Deployment-process-for-additional-required-service.md)
+
 
 ##### a. Run below command to start the aumotated process
 ```bash
