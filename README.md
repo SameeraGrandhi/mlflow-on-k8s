@@ -139,7 +139,7 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 3. Nexus
 
 ###### a.1 command to generate Sample Mlflow project
-Using this below command **Data Science Team Member** can generate sample mlflow project & apply your own implementation on top of it. before that you have to modify the `kub_job` section in **settings.py** based on your need. 
+Using this below command **Data Science Team Member** can generate sample mlflow project & apply  own implementation on top of it. before that you have to modify the `kub_job` section in **settings.py** based on your need. 
 ```bash
 python service_helper.py --generate_ml_template
 ```
