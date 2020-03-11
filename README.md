@@ -49,7 +49,9 @@ Clone this repository. In a terminal, run:
 $ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
 ```
 #### 3. Create namespace in kubernetes
-Run below command to create namespace in kubernetes
+To isolate our list of Pods Services and Deployments we use to build and run their platform setup, we needed to create separate namespace.
+
+Run below command to create namespace in kubernetes:
 ```
 # Minikube/EKS
 $ kubectl create ns <your namespace>
@@ -59,6 +61,8 @@ $ microk8s.kubectl create ns <your namespace>
 ```
 
 #### 4. Create a new secret for our application
+To pull Docker image from private Docker registry we need to create secret.
+
 Run below command to create secret in kubernetes
 ```bash
  kubectl create secret generic regcred -n <your namespace>  --from-file=.dockerconfigjson=/home/<username>/.docker/config.json --type=kubernetes.io/dockerconfigjson #replace username & namespace
@@ -134,16 +138,13 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 3. Nexus
 
 ###### a.1 command to generate Sample Mlflow project
+
+The below command used to generate sample mlflow project template using this build your own implementation
 ```bash
 python service_helper.py --generate_ml_template
 ```
 ```bash
 __main__     INFO     current output Directory Path /home/srinivasan/workspace_python/cluster_setup/output/1583304596398
-docker.utils.config DEBUG    Trying paths: ['/home/srinivasan/.docker/config.json', '/home/srinivasan/.dockercfg']
-docker.utils.config DEBUG    Found file at path: /home/srinivasan/.docker/config.json
-docker.auth  DEBUG    Found 'auths' section
-docker.auth  DEBUG    Found entry (registry='192.168.39.85:30002', username='admin')
-docker.auth  DEBUG    Found entry (registry='https://index.docker.io/v1/', username='srinivasanpramati2020')
 __main__     INFO     template render the files in /home/srinivasan/workspace_python/cluster_setup/src/lib/template/mlflow folder
 __main__     INFO     template has been generated in MlflowTemplateGen service
 __main__     INFO     Sample Template generated in /home/srinivasan/workspace_python/cluster_setup/output/1583304596398/mlflow_on_kubernetes folder
