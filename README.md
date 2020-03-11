@@ -138,6 +138,18 @@ In the browser, go to https://127.0.0.1:10443 (``we use microk8s, the port may b
 2. Mlfowserver
 3. Nexus
 
+To verify the pods status run below command
+```bash
+kubectl get pods -n <namespace> #replace with your namespace name
+```
+output:
+```bash
+minikube-mlflowserver-598d8b755d-z9jzp       0/1     Running            2          6m29s
+minikube-mysql-7c58cc749b-xj5dt              0/1     Running            4          21m
+minikube-mysql-client                        1/1     Running            1          21m
+minikube-nexus-deployment-5dc4796c54-fxw2j   1/1     Running            2          6m29s
+```
+
 ###### a.1 command to generate Sample Mlflow project
 Using this below command **Data Science Team Member** can generate sample mlflow project & apply  own implementation on top of it. before that you have to modify the `kub_job` section in **settings.py** based on your need. 
 ```bash
