@@ -1,9 +1,5 @@
-secretGenerator:
-- name: mysql-pass
-  namespace: {{ namspace }}
-  literals:
-  - password={{ mysql.password }}
 resources:
+- secret.yaml
 - service.yaml
 - mysql-deployment.yaml
 - client-pod.yaml

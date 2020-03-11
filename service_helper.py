@@ -80,7 +80,7 @@ class MysqlClient(object):
             engine.dispose()
     
     def getDbUrl(self, conf):
-        url = 'mysql+mysqldb://root:{{mysql.password}}@{{master_ip}}:30036/{{mysql.dbname}}'
+        url = 'mysql+mysqldb://root:{{mysql.password}}@{{master_ip}}:30036/mysql'
         return Template(url).render(**conf)
 
     """
@@ -154,10 +154,11 @@ class Service(IService, DockerClient):
     def deployInkube(self, path):
         cmd = "kustomize build {0} | {1} apply -f -".\
         format(path, self.config['kubectl'])
-        import subprocess, shlex
+        logger.info("command {}".format(cmd))
+        import subprocess
         import sys
-        process = subprocess.Popen(shlex.split(cmd),
-                                   stdout=subprocess.PIPE)
+        process = subprocess.Popen(cmd,
+                                   stdout=subprocess.PIPE,shell=True)
         for line in process.stdout:
             sys.stdout.write(line.decode('utf-8'))
         process.kill()
