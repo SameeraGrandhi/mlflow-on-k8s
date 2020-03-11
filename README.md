@@ -49,7 +49,7 @@ Clone this repository. In a terminal, run:
 $ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
 ```
 #### 3. Create namespace in kubernetes
-To isolate our list of Pods Services and Deployments we use to build and run their platform setup, we needed to create separate namespace.
+To isolate our list of Pods,Services and Deployments we use to build and run their platform setup, we needed to create separate namespace.
 
 Run below command to create namespace in kubernetes:
 ```
