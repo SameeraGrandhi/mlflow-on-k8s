@@ -63,6 +63,11 @@ $ microk8s.kubectl create ns <your namespace>
 #### 4. Create a new secret for our application
 To pull Docker image from private Docker registry we need to create secret.
 
+Run below command to create **dockerconfigjson** file
+```bash
+docker login
+```
+
 Run below command to create secret in kubernetes
 ```bash
  kubectl create secret generic regcred -n <your namespace>  --from-file=.dockerconfigjson=/home/<username>/.docker/config.json --type=kubernetes.io/dockerconfigjson #replace username & namespace
