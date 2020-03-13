@@ -26,7 +26,7 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
    * Virtualbox/Kvm Driver - for Minikube setup
    * Install Kustomize
    ```bash
-    opsys=linux  # or darwin, or windows
+    opsys=linux 
     curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest |\
       grep browser_download |\
       grep $opsys |\
