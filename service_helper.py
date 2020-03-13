@@ -19,7 +19,6 @@ from src.lib import settings, utils
 logger = logging.getLogger(__name__)
 
 
-
 class DockerClient(object):
     
     def __init__(self):
@@ -159,10 +158,11 @@ class Service(IService, DockerClient):
         import subprocess
         import sys
         process = subprocess.Popen(cmd,
-                                   stdout=subprocess.PIPE,stderr=subprocess.STDOUT,shell=True)
-        #print(process.stdout.read())
+                                   stdout=subprocess.PIPE,
+                                    stderr=subprocess.STDOUT,
+                                    shell=True)
         for _line in process.stdout:
-            line=_line.decode('utf-8')
+            line = _line.decode('utf-8')
             sys.stdout.write(line)
             if 'error' in line or 'refused' in line:
                 process.kill()
@@ -187,9 +187,12 @@ class MysqlService(Service, MysqlClient):
             logger.info("waiting for mysql service up")
             sleep(120)
             # retry and wait
+            if self.config['cluster'].lower() == 'eks':
+                settings.MYSQL_LB_IP = input("Enter your mysql loadbalancer ip:")
+                self.config['master_ip'] = settings.MYSQL_LB_IP
             self.createUserAndGivePerm(self.config)
         return super().prepareAndRun()
-
+    
 
 class MLFlowService(Service):
 
@@ -199,6 +202,8 @@ class MLFlowService(Service):
     
     def prepareAndRun(self):
         if not self.config['mlflow']['isSkip']:
+            if settings.MYSQL_LB_IP:
+                self.config['master_ip'] = settings.MYSQL_LB_IP
             self.template_render(os.path.join(settings.BASE_DIR,
                                               "src", "mlflowserver"))
             tag = self.config['mlflow']['docker_image']
@@ -283,10 +288,10 @@ class TemplateGeneration(Service):
 def cli(setup_platform, flask_deploy, generate_ml_template):
     logger.info("current output Directory Path {}".format(settings.OUTPUT_DIR))
     if setup_platform:
-        conf=settings.config
+        conf = settings.config
         import base64
-        passw=conf['mysql']['password']
-        conf['enc_password']=str(base64.b64encode(passw.encode('utf-8')), 'utf-8')
+        passw = conf['mysql']['password']
+        conf['enc_password'] = str(base64.b64encode(passw.encode('utf-8')), 'utf-8')
         LaunchService(conf).launch()
     if flask_deploy:
         FlaskService(settings.config).prepareAndRun()
@@ -296,4 +301,3 @@ def cli(setup_platform, flask_deploy, generate_ml_template):
 
 if __name__ == '__main__':
     cli()
-
