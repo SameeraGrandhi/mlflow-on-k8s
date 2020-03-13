@@ -81,7 +81,7 @@ class MysqlClient(object):
             engine.dispose()
     
     def getDbUrl(self, conf):
-        url = 'mysql+mysqldb://root:{{mysql.password}}@{{master_ip}}:30036/mysql'
+        url = 'mysql+mysqldb://root:{{mysql.password}}@{{master_ip}}:{{mysql.nodePort}}/mysql'
         return Template(url).render(**conf)
 
     """
