@@ -32,7 +32,7 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
       grep $opsys |\
       cut -d '"' -f 4 |\
       xargs curl -O -L
-    mv kustomize_*_${opsys}_amd64 kustomize
+    mv kustomize_*_${opsys}_amd64 /usr/local/bin/kustomize
     chmod u+x kustomize
    ```
 
