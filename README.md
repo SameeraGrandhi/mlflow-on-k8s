@@ -23,12 +23,21 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
    * Ubuntu 18.04
    * Snap  - for microk8s setup
    * Virtualbox/Kvm Driver - for Minikube setup
-2. Use Python 3.6
+2. Use Python >=3.6 & Install Dependencies 
    
    In Ubuntu, Mint and Debian you can install Python 3 like this:
      ```bash
       sudo apt-get install python3 python3-pip
      ```
+   Required Dependencies in Client Machine
+   ```bash
+    pip install click
+    pip install docker
+    pip install Jinja2
+    pip install retrying
+    pip install SQLAlchemy
+    pip install mysqlclient
+   ```
  3. Install Kustomize
    ```bash
     opsys=linux 
