@@ -24,7 +24,7 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
    * Ubuntu 18.04
    * Snap  - for microk8s setup
    * Virtualbox/Kvm Driver - for Minikube setup
-   * Install Kustomize
+ 3. Install Kustomize
    ```bash
     opsys=linux 
     curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest |\
