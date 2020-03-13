@@ -19,11 +19,16 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
 ### End to End Flow Diagram:
 ![wkg](doc/uploads/flow_dia.png)
 ### Software Prerequisites
-1. Use Python 3.6
-2. Linux-specific Software Requirements
+1. Linux-specific Software Requirements
    * Ubuntu 18.04
    * Snap  - for microk8s setup
    * Virtualbox/Kvm Driver - for Minikube setup
+2. Use Python 3.6
+   
+   In Ubuntu, Mint and Debian you can install Python 3 like this:
+     ```bash
+      sudo apt-get install python3 python3-pip
+     ```
  3. Install Kustomize
    ```bash
     opsys=linux 
