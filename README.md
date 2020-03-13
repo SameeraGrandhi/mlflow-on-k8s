@@ -53,23 +53,23 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
 ### Platform setup & configuration Steps
 The followed context describes all the installation process for to run the Mlflow project on  **Amazon EKS/minikube/microk8s** Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster. Follow these general installation and configuration steps, located in this below section
 
-1. Install and configure the MiniKube/Microk8s Cluster
+1. Install and configure the Microk8s/Amazon EKS/MiniKube Cluster
 2. Clone the repo
 3. Create a new namespace for our application
 4. Create a new secret for our application
 5. Additional Software Requirements
 
-#### 1. Install MiniKube/Microk8s/Amazon EKS Cluster
+#### 1. Install Microk8s/Amazon EKS/MiniKube Cluster
 There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube,Amazon EKS and Microk8s installation process. It depends on your needs you can **install any one** of them.
-* Install **Minikube** to work with Kubernetes on a local environment for purpose. Check the [Install MiniKube with Kvm2 Driver](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
 * Install **Microk8s** to work with Kubernetes on a Multi node cluster purpose. Check the [Install microk8s Mlulti-Node cluster](doc/Install-microk8s(Mlulti-Node-cluster).md) to Install microk8s
 * Install **Amazon EKS** to work with Kubernetes on a Multi node cluster purpose. Check the [Install and configure Amazon EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) to Install miok8s
+* Install **Minikube** to work with Kubernetes on a local environment for purpose. Check the [Install MiniKube with Kvm2 Driver](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
+
 
 ##### Note: In our Example project we used Microk8s
 
 #### 2. Clone the repo
 Clone this repository. In a terminal, run:
-
 ```
 $ git clone https://github.com/Imaginea/mlflow-on-k8s.git
 ```
@@ -84,7 +84,6 @@ $ kubectl create ns <your namespace>
 # MicroK8s
 $ microk8s.kubectl create ns <your namespace>
 ```
-
 #### 4. Create a new secret for our application
 To pull Docker image from private Docker registry we need to create secret.
 
