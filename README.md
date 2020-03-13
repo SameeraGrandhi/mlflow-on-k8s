@@ -71,7 +71,7 @@ There are so many open source tools are available in market now a days to build 
 Clone this repository. In a terminal, run:
 
 ```
-$ git clone https://gitlab.pramati.com/srinivasanr/mlflowonkubernetes.git
+$ git clone https://github.com/Imaginea/mlflow-on-k8s.git
 ```
 #### 3. Create namespace in kubernetes
 To isolate our list of Pods,Services and Deployments we use to build and run their platform setup, we needed to create separate namespace.
