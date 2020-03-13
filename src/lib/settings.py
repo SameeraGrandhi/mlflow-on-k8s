@@ -59,6 +59,7 @@ config = {
     "maintainer" :"srinivasan.ramalingam@imaginea.com"
   }
 }
+MYSQL_LB_IP = None
 
 # OutFile Generated Path
 OUTPUT_DIR = utils.createDirIfNotExist(os.path.join(BASE_DIR,
