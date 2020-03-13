@@ -24,6 +24,17 @@ When installing the Kubernetes cluster from scratch & scale out mlflow job on ku
    * Ubuntu 18.04
    * Snap  - for microk8s setup
    * Virtualbox/Kvm Driver - for Minikube setup
+   * Install Kustomize
+   ```bash
+    opsys=linux  # or darwin, or windows
+    curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest |\
+      grep browser_download |\
+      grep $opsys |\
+      cut -d '"' -f 4 |\
+      xargs curl -O -L
+    mv kustomize_*_${opsys}_amd64 kustomize
+    chmod u+x kustomize
+   ```
 
 ### Platform setup & configuration Steps
 The followed context describes all the installation process for to run the Mlflow project on  **Amazon EKS/minikube/microk8s** Cluster starts from scratch. This will covers all aspects of its installation, including all various softwares needed & how to deploy the required services on kubernetes cluster. Follow these general installation and configuration steps, located in this below section
