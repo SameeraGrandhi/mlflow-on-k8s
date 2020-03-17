@@ -61,9 +61,15 @@ The followed context describes all the installation process for to run the Mlflo
 
 #### 1. Install Microk8s/Amazon EKS/MiniKube Cluster
 There are so many open source tools are available in market now a days to build kubernetes cluster. Here we are, covered in Minikube,Amazon EKS and Microk8s installation process. It depends on your needs you can **install any one** of them.
-* Install **Amazon EKS** to work with Kubernetes on a Multi node cluster purpose. Check the [Install and configure Amazon EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) to Install Amazon EKS
-* Install **Microk8s** to work with Kubernetes on a Multi node cluster purpose. Check the [Install microk8s Mlulti-Node cluster](doc/Install-microk8s(Mlulti-Node-cluster).md) to Install microk8s
-* Install **Minikube** to work with Kubernetes on a local environment for purpose. Check the [Install MiniKube with Kvm2 Driver](doc/Install-MiniKube-with-Kvm2-Driver.md) to Install MiniKube with Kvm2 Driver
+* Install **Amazon EKS** to work with Kubernetes on a Multi node cluster purpose. Check the [Install and configure Amazon EKS-Cluster](doc/Install-and-configure-Amazon-EKS-Cluster.md) 
+
+If you want to install Microk8s/Minikube through shell script, run below command
+```bash
+bash bin/install-k8s.sh
+```
+To Install manually follow the below doc
+* Install **Microk8s** to work with Kubernetes on a Multi node cluster purpose. Check the [Install microk8s Mlulti-Node cluster](doc/Install-microk8s(Mlulti-Node-cluster).md) 
+* Install **Minikube** to work with Kubernetes on a local environment for purpose. Check the [Install MiniKube with Kvm2 Driver](doc/Install-MiniKube-with-Kvm2-Driver.md) 
 
 
 ##### Note: In our Example project we used Microk8s
